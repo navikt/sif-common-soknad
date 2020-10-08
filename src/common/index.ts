@@ -21,3 +21,4 @@ export { default as JaNeiSvar } from './soknad-summary/JaNeiSvar';
 export { default as KronerSvar } from './soknad-summary/KronerSvar';
 export { default as TallSvar } from './soknad-summary/TallSvar';
 export { default as TextareaSvar } from './soknad-summary/TextareaSvar';
+export type { SoknadContextInterface, SendSoknadStatusInterface } from './soknad-context/SoknadContext';
