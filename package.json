@@ -37,11 +37,7 @@
         "package.json",
         "/lib"
     ],
-    "dependencies": {
-        "@formatjs/intl-pluralrules": "^3.5.1",
-        "@formatjs/intl-numberformat": "5.7.1",
-        "@formatjs/intl-relativetimeformat": "7.3.1"
-    },
+    "dependencies": {},
     "peerDependencies": {
         "@devexperts/remote-data-ts": "^2.0.4",
         "@navikt/appstatus-react": "^0.1.2",
@@ -55,7 +51,7 @@
         "@devexperts/remote-data-ts": "^2.0.4",
         "@formatjs/intl-pluralrules": "^3.5.1",
         "@navikt/appstatus-react": "^0.1.2",
-        "@navikt/sif-common-core": "^6.1.6",
+        "@navikt/sif-common-core": "^6.1.10",
         "@navikt/sif-common-formik": "^12.0.1",
         "@navikt/sif-common-forms": "^10.0.2",
         "@navikt/sif-common-question-config": "0.0.6",
@@ -70,7 +66,7 @@
         "@types/react-modal": "^3.10.6",
         "@typescript-eslint/eslint-plugin": "4.0.1",
         "@typescript-eslint/parser": "4.0.1",
-        "axios": "^0.20.0",
+        "axios": "^0.21.0",
         "copyfiles": "^2.4.0",
         "core-js": "^3.6.5",
         "craco-less": "^1.17.0",

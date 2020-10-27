@@ -1,21 +1,17 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter } from 'react-router-dom';
-import '@formatjs/intl-numberformat/locale-data/nb';
-import '@formatjs/intl-numberformat/locale-data/nn';
-import '@formatjs/intl-numberformat/polyfill';
-import '@formatjs/intl-pluralrules/locale-data/nb';
-import '@formatjs/intl-pluralrules/locale-data/nn';
-import '@formatjs/intl-pluralrules/polyfill';
-import '@formatjs/intl-relativetimeformat/locale-data/nb';
-import '@formatjs/intl-relativetimeformat/locale-data/nn';
-import '@formatjs/intl-relativetimeformat/polyfill';
 import AppStatusWrapper from '@navikt/sif-common-core/lib/components/app-status-wrapper/AppStatusWrapper';
 import LanguageToggle from '@navikt/sif-common-core/lib/components/language-toggle/LanguageToggle';
 import ApplicationMessages from '@navikt/sif-common-core/lib/dev-utils/intl/application-messages/ApplicationMessages';
 import { MessageFileFormat } from '@navikt/sif-common-core/lib/dev-utils/intl/devIntlUtils';
 import { Locale } from '@navikt/sif-common-core/lib/types/Locale';
-import { getLocaleFromSessionStorage, setLocaleInSessionStorage } from '@navikt/sif-common-core/lib/utils/localeUtils';
+import {
+    getBokmålLocale,
+    getLocaleFromSessionStorage,
+    getNynorskLocale,
+    setLocaleInSessionStorage,
+} from '@navikt/sif-common-core/lib/utils/localeUtils';
 import getSentryLoggerForApp from '@navikt/sif-common-sentry';
 import moment from 'moment';
 import { Normaltekst } from 'nav-frontend-typografi';
@@ -65,7 +61,7 @@ const SoknadApplication = ({ intlMessages: messages, appName, sentryKey, appStat
 
     return (
         <Normaltekst tag="div">
-            <IntlProvider locale={locale} messages={localeMessages}>
+            <IntlProvider locale={locale === 'nb' ? getBokmålLocale() : getNynorskLocale()} messages={localeMessages}>
                 {hasMultipleLocales && (
                     <LanguageToggle
                         locale={locale}
