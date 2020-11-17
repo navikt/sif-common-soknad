@@ -26,6 +26,7 @@ interface Props {
     topContentRenderer?: () => React.ReactElement<any>;
     onCancel?: () => void;
     onContinueLater?: () => void;
+    cancelOrContinueLaterAriaLabel?: string;
 }
 
 function Step({
@@ -38,6 +39,7 @@ function Step({
     useValidationErrorSummary,
     onCancel,
     onContinueLater,
+    cancelOrContinueLaterAriaLabel,
     showStepIndicator = true,
     children,
 }: Props) {
@@ -81,8 +83,11 @@ function Step({
                 </Box>
 
                 <Box margin="xl">{children}</Box>
+
                 {(onCancel || onContinueLater) && (
-                    <div role="complementary">
+                    <div
+                        role={cancelOrContinueLaterAriaLabel ? 'complementary' : undefined}
+                        aria-label={cancelOrContinueLaterAriaLabel}>
                         <StepFooter onAvbrytOgSlett={onCancel} onAvbrytOgFortsettSenere={onContinueLater} />
                     </div>
                 )}
