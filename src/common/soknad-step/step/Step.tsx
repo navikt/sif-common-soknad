@@ -50,6 +50,7 @@ function Step({
         <Page
             className={bem.block}
             title={pageTitle}
+            mainAriaLabel={pageAriaLabel}
             topContentRenderer={() => (
                 <>
                     {bannerTitle && (
