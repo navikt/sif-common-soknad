@@ -27,6 +27,7 @@ interface Props {
     onCancel?: () => void;
     onContinueLater?: () => void;
     cancelOrContinueLaterAriaLabel?: string;
+    pageAriaLabel?: string;
 }
 
 function Step({
@@ -42,6 +43,7 @@ function Step({
     cancelOrContinueLaterAriaLabel,
     showStepIndicator = true,
     children,
+    pageAriaLabel,
 }: Props) {
     const currentStepIndex = steps.findIndex((s) => s.id === activeStepId);
     return (
