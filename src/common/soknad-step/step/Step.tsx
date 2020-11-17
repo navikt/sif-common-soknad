@@ -73,7 +73,7 @@ function Step({
                     </div>
                 </>
             )}
-            <main aria-label={`Steg ${currentStepIndex + 1} av ${steps.length}:  ${pageTitle}`}>
+            <section aria-label={`Steg ${currentStepIndex + 1} av ${steps.length}:  ${pageTitle}`}>
                 <Box margin="xxl">
                     <Systemtittel className={bem.element('title')} tag="h1">
                         {stepTitle}
@@ -86,7 +86,7 @@ function Step({
                         <StepFooter onAvbrytOgSlett={onCancel} onAvbrytOgFortsettSenere={onContinueLater} />
                     </div>
                 )}
-            </main>
+            </section>
         </Page>
     );
 }
