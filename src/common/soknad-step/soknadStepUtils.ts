@@ -7,6 +7,7 @@ interface StepTexts {
     pageTitle: string;
     stepTitle: string;
     nextButtonLabel: string;
+    previousStepTitle?: string;
 }
 
 const getStepTexts = <Step>(intl: IntlShape, stepConfig: StepConfig<Step>): StepTexts => {
@@ -14,6 +15,11 @@ const getStepTexts = <Step>(intl: IntlShape, stepConfig: StepConfig<Step>): Step
         pageTitle: intlHelper(intl, stepConfig.pageTitleIntlKey),
         stepTitle: intlHelper(intl, stepConfig.stepTitleIntlKey),
         nextButtonLabel: intlHelper(intl, stepConfig.nextButtonLabelIntlKey),
+        previousStepTitle: stepConfig.previousStepTitleIntlKey
+            ? intlHelper(intl, 'sif-common-soknad.tilbakeLenke', {
+                  title: intlHelper(intl, stepConfig.previousStepTitleIntlKey),
+              })
+            : undefined,
     };
 };
 

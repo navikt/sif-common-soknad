@@ -3,11 +3,11 @@ import soknadErrorIntlMessages from '../soknad-error-messages/soknadErrorIntlMes
 
 const soknadIntlMessages: MessageFileFormat = {
     nb: {
-        'sif-common-soknad.tilbakeLenke': 'Tilbake til {tittel}',
+        'sif-common-soknad.tilbakeLenke': 'Tilbake til {title}',
         ...soknadErrorIntlMessages.nb,
     },
     nn: {
-        'sif-common-soknad.tilbakeLenke': 'Tilbake til {tittel}',
+        'sif-common-soknad.tilbakeLenke': 'Tilbake til {title}',
         ...soknadErrorIntlMessages.nn,
     },
 };
