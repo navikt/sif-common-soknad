@@ -35,6 +35,8 @@ const getStepsConfig = <STEPS extends string>(
     steps.forEach((stepId) => {
         const nextStep = idx < numSteps - 1 ? steps[idx + 1] : undefined;
         const nextStepRoute = nextStep ? getStepRoute(nextStep, applicationType) : undefined;
+        const prevStepId = idx > 0 ? steps[idx - 1] : undefined;
+
         config[stepId] = {
             id: stepId,
             pageTitleIntlKey: `step.${stepId}.pageTitle`,
@@ -42,7 +44,8 @@ const getStepsConfig = <STEPS extends string>(
             nextButtonLabelIntlKey: `step.${stepId}.nextButtonLabel`,
             route: getStepRoute(stepId, applicationType),
             index: idx,
-            backLinkHref: idx > 0 ? getStepRoute(steps[idx - 1], applicationType) : undefined,
+            backLinkHref: prevStepId ? getStepRoute(prevStepId, applicationType) : undefined,
+            previousStepTitleIntlKey: prevStepId ? `step.${prevStepId}.pageTitle` : undefined,
             nextStep,
             nextStepRoute,
         };

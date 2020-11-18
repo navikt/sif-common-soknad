@@ -5,6 +5,7 @@ export interface StepConfig<STEPS> {
     nextStep?: STEPS;
     nextStepRoute?: string;
     backLinkHref?: string;
+    previousStepTitleIntlKey?: string;
     pageTitleIntlKey: string;
     stepTitleIntlKey: string;
     nextButtonLabelIntlKey: string;
