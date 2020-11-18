@@ -9,6 +9,7 @@ export { default as ErrorPage } from './soknad-common-pages/ErrorPage';
 export { default as LoadingPage } from './soknad-common-pages/LoadingPage';
 export { default as soknadErrorIntlMessages } from './soknad-error-messages/soknadErrorIntlMessages';
 export { default as SoknadErrorMessages } from './soknad-error-messages/SoknadErrorMessages';
+export { default as soknadIntlMessages } from './soknad-intl-messages/soknadIntlMessages';
 export type { LastAvailableStepInfo } from './soknad-error-messages/SoknadErrorMessages';
 export * from './soknad-step/soknadStepTypes';
 export { default as soknadStepUtils } from './soknad-step/soknadStepUtils';

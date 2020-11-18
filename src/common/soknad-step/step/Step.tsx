@@ -10,6 +10,8 @@ import { History } from 'history';
 import { Systemtittel } from 'nav-frontend-typografi';
 import StepIndicator, { StepIndicatorStep } from '../step-indicator/StepIndicator';
 import './step.less';
+import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
+import { useIntl } from 'react-intl';
 
 const bem = bemHelper('step');
 
@@ -20,6 +22,7 @@ interface Props {
     backLinkHref?: string;
     steps: StepIndicatorStep[];
     activeStepId: string;
+    previousStepTitle?: string;
     children: React.ReactNode;
     showStepIndicator?: boolean;
     useValidationErrorSummary?: boolean;
@@ -43,9 +46,11 @@ function Step({
     cancelOrContinueLaterAriaLabel,
     showStepIndicator = true,
     children,
+    previousStepTitle,
     pageAriaLabel,
 }: Props) {
     const currentStepIndex = steps.findIndex((s) => s.id === activeStepId);
+    const intl = useIntl();
     return (
         <Page
             className={bem.block}
@@ -66,6 +71,11 @@ function Step({
                     {backLinkHref && (
                         <BackLink
                             href={backLinkHref}
+                            ariaLabel={
+                                previousStepTitle
+                                    ? intlHelper(intl, 'sif-common-soknad.tilbakeLenke', { tittel: previousStepTitle })
+                                    : undefined
+                            }
                             className={bem.element('backLink')}
                             onClick={(nextHref: string, history: History, event: React.SyntheticEvent) => {
                                 event.preventDefault();
