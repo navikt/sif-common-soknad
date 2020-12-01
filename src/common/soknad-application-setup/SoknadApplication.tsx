@@ -1,5 +1,8 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
+import '@formatjs/intl-pluralrules/locale-data/nb';
+import '@formatjs/intl-pluralrules/locale-data/nn';
+import '@formatjs/intl-pluralrules/polyfill';
 import { BrowserRouter } from 'react-router-dom';
 import AppStatusWrapper from '@navikt/sif-common-core/lib/components/app-status-wrapper/AppStatusWrapper';
 import LanguageToggle from '@navikt/sif-common-core/lib/components/language-toggle/LanguageToggle';
