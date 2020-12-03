@@ -37,9 +37,7 @@
         "package.json",
         "/lib"
     ],
-    "dependencies": {
-        "dayjs": "^1.9.6"
-    },
+    "dependencies": {},
     "peerDependencies": {
         "@formatjs/intl-pluralrules": "^4.0.0",
         "@devexperts/remote-data-ts": "^2.0.4",
@@ -47,7 +45,8 @@
         "@navikt/sif-common-core": "^6.1.28",
         "@navikt/sif-common-formik": "^12.0.1",
         "@navikt/sif-common-question-config": "0.0.6",
-        "@navikt/sif-common-sentry": "0.0.13"
+        "@navikt/sif-common-sentry": "0.0.13",
+        "dayjs": "^1.9.6"
     },
     "devDependencies": {
         "@craco/craco": "^5.7.0",
@@ -74,6 +73,7 @@
         "core-js": "^3.6.5",
         "craco-less": "^1.17.0",
         "cz-conventional-changelog": "^3.3.0",
+        "dayjs": "^1.9.6",
         "enzyme": "^3.11.0",
         "enzyme-adapter-react-16": "^1.15.5",
         "eslint": "^7.12.1",
