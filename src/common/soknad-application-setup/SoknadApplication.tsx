@@ -16,10 +16,12 @@ import {
     setLocaleInSessionStorage,
 } from '@navikt/sif-common-core/lib/utils/localeUtils';
 import getSentryLoggerForApp from '@navikt/sif-common-sentry';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { Normaltekst } from 'nav-frontend-typografi';
 import ErrorPage from '../soknad-common-pages/ErrorPage';
 import SoknadErrorMessages from '../soknad-error-messages/SoknadErrorMessages';
+import 'dayjs/locale/nb';
+import 'dayjs/locale/nn';
 
 interface AppStatusSanityConfig {
     projectId: string;
@@ -46,7 +48,7 @@ interface Props {
 }
 
 const localeFromSessionStorage = getLocaleFromSessionStorage();
-moment.locale(localeFromSessionStorage);
+dayjs.locale(localeFromSessionStorage);
 
 const isValidAppStatus = (appStatus: AppStatus | any): appStatus is AppStatus =>
     appStatus !== undefined &&
