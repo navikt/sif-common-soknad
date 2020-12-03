@@ -71,11 +71,7 @@ function Step({
                     {backLinkHref && (
                         <BackLink
                             href={backLinkHref}
-                            ariaLabel={
-                                previousStepTitle
-                                    ? intlHelper(intl, 'sif-common-soknad.tilbakeLenke', { tittel: previousStepTitle })
-                                    : undefined
-                            }
+                            ariaLabel={previousStepTitle}
                             className={bem.element('backLink')}
                             onClick={(nextHref: string, history: History, event: React.SyntheticEvent) => {
                                 event.preventDefault();

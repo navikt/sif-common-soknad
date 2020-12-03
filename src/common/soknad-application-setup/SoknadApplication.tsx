@@ -1,5 +1,8 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
+import '@formatjs/intl-pluralrules/locale-data/nb';
+import '@formatjs/intl-pluralrules/locale-data/nn';
+import '@formatjs/intl-pluralrules/polyfill';
 import { BrowserRouter } from 'react-router-dom';
 import AppStatusWrapper from '@navikt/sif-common-core/lib/components/app-status-wrapper/AppStatusWrapper';
 import LanguageToggle from '@navikt/sif-common-core/lib/components/language-toggle/LanguageToggle';
@@ -13,10 +16,12 @@ import {
     setLocaleInSessionStorage,
 } from '@navikt/sif-common-core/lib/utils/localeUtils';
 import getSentryLoggerForApp from '@navikt/sif-common-sentry';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { Normaltekst } from 'nav-frontend-typografi';
 import ErrorPage from '../soknad-common-pages/ErrorPage';
 import SoknadErrorMessages from '../soknad-error-messages/SoknadErrorMessages';
+import 'dayjs/locale/nb';
+import 'dayjs/locale/nn';
 
 interface AppStatusSanityConfig {
     projectId: string;
@@ -43,7 +48,7 @@ interface Props {
 }
 
 const localeFromSessionStorage = getLocaleFromSessionStorage();
-moment.locale(localeFromSessionStorage);
+dayjs.locale(localeFromSessionStorage);
 
 const isValidAppStatus = (appStatus: AppStatus | any): appStatus is AppStatus =>
     appStatus !== undefined &&
