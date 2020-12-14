@@ -10,8 +10,6 @@ import { History } from 'history';
 import { Systemtittel } from 'nav-frontend-typografi';
 import StepIndicator, { StepIndicatorStep } from '../step-indicator/StepIndicator';
 import './step.less';
-import intlHelper from '@navikt/sif-common-core/lib/utils/intlUtils';
-import { useIntl } from 'react-intl';
 
 const bem = bemHelper('step');
 
@@ -50,7 +48,6 @@ function Step({
     pageAriaLabel,
 }: Props) {
     const currentStepIndex = steps.findIndex((s) => s.id === activeStepId);
-    const intl = useIntl();
     return (
         <Page
             className={bem.block}
