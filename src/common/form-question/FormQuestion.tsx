@@ -21,10 +21,10 @@ export function getTypedFormQuestion<FieldName>() {
 }
 
 function FormQuestion<FieldName>(props: FormQuestionProps<FieldName>) {
-    const { name, showStop, description, stopMessage, showInfo, infoMessage, legend, children } = props;
+    const { name, showStop, description, stopMessage, showInfo, infoMessage, legend, children, ...rest } = props;
     return (
         <FormBlock>
-            {children || <FormikYesOrNoQuestion name={name} legend={legend} description={description} />}
+            {children || <FormikYesOrNoQuestion name={name} legend={legend} description={description} {...rest} />}
             <div aria-live="polite">
                 {showStop && stopMessage && (
                     <FormBlock>

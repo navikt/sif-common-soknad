@@ -28,7 +28,6 @@ interface Props {
     onCancel?: () => void;
     onContinueLater?: () => void;
     cancelOrContinueLaterAriaLabel?: string;
-    pageAriaLabel?: string;
 }
 
 function Step({
@@ -45,14 +44,12 @@ function Step({
     showStepIndicator = true,
     children,
     previousStepTitle,
-    pageAriaLabel,
 }: Props) {
     const currentStepIndex = steps.findIndex((s) => s.id === activeStepId);
     return (
         <Page
             className={bem.block}
             title={pageTitle}
-            mainAriaLabel={pageAriaLabel}
             topContentRenderer={() => (
                 <>
                     {bannerTitle && (
