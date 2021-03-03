@@ -27,12 +27,12 @@ function FormQuestion<FieldName>(props: FormQuestionProps<FieldName>) {
             {children || <FormikYesOrNoQuestion name={name} legend={legend} description={description} {...rest} />}
             <div aria-live="polite">
                 {showStop && stopMessage && (
-                    <FormBlock>
+                    <FormBlock margin="l">
                         <AlertStripeAdvarsel>{stopMessage}</AlertStripeAdvarsel>
                     </FormBlock>
                 )}
                 {showInfo && infoMessage && (
-                    <FormBlock>
+                    <FormBlock margin="l">
                         <AlertStripeInfo>{infoMessage}</AlertStripeInfo>
                     </FormBlock>
                 )}
