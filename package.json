@@ -42,8 +42,8 @@
         "@formatjs/intl-pluralrules": "^4.0.0",
         "@devexperts/remote-data-ts": "^2.0.4",
         "@navikt/appstatus-react": "^0.1.2",
-        "@navikt/sif-common-core": "^9.1.0",
-        "@navikt/sif-common-formik": "^18.3.0",
+        "@navikt/sif-common-core": "^9.1.1",
+        "@navikt/sif-common-formik": "^19.0.2",
         "@navikt/sif-common-question-config": "0.0.7",
         "@navikt/sif-common-sentry": "0.1.1",
         "dayjs": "^1.9.6"
