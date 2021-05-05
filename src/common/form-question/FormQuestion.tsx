@@ -4,9 +4,10 @@ import FormBlock from '@navikt/sif-common-core/lib/components/form-block/FormBlo
 import FormikYesOrNoQuestion, {
     FormikYesOrNoQuestionProps,
 } from '@navikt/sif-common-formik/lib/components/formik-yes-or-no-question/FormikYesOrNoQuestion';
+import { ValidationError } from '@navikt/sif-common-formik/lib/validation/types';
 import { AlertStripeAdvarsel, AlertStripeInfo } from 'nav-frontend-alertstriper';
 
-export interface FormQuestionProps<FieldName> extends FormikYesOrNoQuestionProps<FieldName> {
+export interface FormQuestionProps<FieldName> extends FormikYesOrNoQuestionProps<FieldName, ValidationError> {
     showStop?: boolean;
     description?: React.ReactNode;
     stopMessage?: React.ReactNode;
