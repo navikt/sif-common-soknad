@@ -1,6 +1,6 @@
 {
     "name": "@navikt/sif-common-soknad",
-    "version": "4.2.0",
+    "version": "4.2.1",
     "private": false,
     "scripts": {
         "build-dev-app": "craco build",
