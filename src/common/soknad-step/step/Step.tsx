@@ -24,6 +24,7 @@ interface Props {
     children: React.ReactNode;
     showStepIndicator?: boolean;
     useValidationErrorSummary?: boolean;
+    onBackClick?: () => void;
     topContentRenderer?: () => React.ReactElement<any>;
     onCancel?: () => void;
     onContinueLater?: () => void;
@@ -40,6 +41,7 @@ function Step({
     useValidationErrorSummary,
     onCancel,
     onContinueLater,
+    onBackClick,
     cancelOrContinueLaterAriaLabel,
     showStepIndicator = true,
     children,
@@ -70,6 +72,9 @@ function Step({
                             onClick={(nextHref: string, history: History, event: React.SyntheticEvent) => {
                                 event.preventDefault();
                                 history.push(nextHref);
+                                if (onBackClick) {
+                                    onBackClick();
+                                }
                             }}
                         />
                     )}
