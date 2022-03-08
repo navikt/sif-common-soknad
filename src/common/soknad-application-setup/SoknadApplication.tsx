@@ -22,15 +22,11 @@ import ErrorPage from '../soknad-common-pages/ErrorPage';
 import SoknadErrorMessages from '../soknad-error-messages/SoknadErrorMessages';
 import 'dayjs/locale/nb';
 import 'dayjs/locale/nn';
-
-interface AppStatusSanityConfig {
-    projectId: string;
-    dataset: string;
-}
+import { SanityConfig } from '@navikt/appstatus-react/lib/types';
 
 interface AppStatus {
     applicationKey: string;
-    sanityConfig: AppStatusSanityConfig;
+    sanityConfig: SanityConfig;
 }
 interface Props {
     /** App name - not visual to user */
@@ -53,7 +49,8 @@ dayjs.locale(localeFromSessionStorage);
 const isValidAppStatus = (appStatus: AppStatus | any): appStatus is AppStatus =>
     appStatus !== undefined &&
     appStatus.sanityConfig?.dataset !== undefined &&
-    appStatus.sanityConfig?.projectId !== undefined;
+    appStatus.sanityConfig?.projectId !== undefined &&
+    appStatus.sanityConfig?.apiVersion !== undefined;
 
 const SoknadApplication = ({ intlMessages: messages, appName, sentryKey, appStatus, publicPath, children }: Props) => {
     const [locale, setLocale] = React.useState<Locale>(localeFromSessionStorage);

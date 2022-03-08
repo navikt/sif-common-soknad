@@ -1,6 +1,6 @@
 {
     "name": "@navikt/sif-common-soknad",
-    "version": "4.5.0",
+    "version": "5.0.0",
     "private": false,
     "scripts": {
         "build-dev-app": "craco build",
@@ -36,8 +36,8 @@
     "peerDependencies": {
         "@devexperts/remote-data-ts": "^2.0.x",
         "@formatjs/intl-pluralrules": "^4.1.x",
-        "@navikt/appstatus-react": "^2.0.0",
-        "@navikt/sif-common-core": "^9.4.x || 10.x",
+        "@navikt/appstatus-react": "^3.0.0",
+        "@navikt/sif-common-core": "^11.0.0",
         "@navikt/sif-common-formik": "^20.1.x || 21.x",
         "@navikt/sif-common-question-config": "0.0.7",
         "@navikt/sif-common-sentry": "^0.2.0 || ^0.3.0",
@@ -47,8 +47,8 @@
         "@craco/craco": "^6.2.0",
         "@devexperts/remote-data-ts": "^2.1.1",
         "@formatjs/intl-pluralrules": "^4.3.0",
-        "@navikt/appstatus-react": "^2.0.0",
-        "@navikt/sif-common-core": "^10.0.4",
+        "@navikt/appstatus-react": "^3.0.0",
+        "@navikt/sif-common-core": "^11.0.0",
         "@navikt/sif-common-formik": "^21.1.1",
         "@navikt/sif-common-question-config": "0.0.7",
         "@navikt/sif-common-sentry": "0.2.1",
