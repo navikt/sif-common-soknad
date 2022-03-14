@@ -49,8 +49,7 @@ dayjs.locale(localeFromSessionStorage);
 const isValidAppStatus = (appStatus: AppStatus | any): appStatus is AppStatus =>
     appStatus !== undefined &&
     appStatus.sanityConfig?.dataset !== undefined &&
-    appStatus.sanityConfig?.projectId !== undefined &&
-    appStatus.sanityConfig?.apiVersion !== undefined;
+    appStatus.sanityConfig?.projectId !== undefined;
 
 const SoknadApplication = ({ intlMessages: messages, appName, sentryKey, appStatus, publicPath, children }: Props) => {
     const [locale, setLocale] = React.useState<Locale>(localeFromSessionStorage);
