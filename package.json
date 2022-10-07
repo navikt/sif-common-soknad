@@ -63,7 +63,7 @@
         "@typescript-eslint/eslint-plugin": "5.20.0",
         "@typescript-eslint/parser": "5.20.0",
         "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
-        "axios": "^0.24.0",
+        "axios": "^1.1.2",
         "copyfiles": "^2.4.1",
         "core-js": "^3.22.2",
         "craco-less": "^1.18.0",
