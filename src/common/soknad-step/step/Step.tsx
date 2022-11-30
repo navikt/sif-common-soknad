@@ -7,7 +7,7 @@ import StepFooter from '@navikt/sif-common-core/lib/components/step-footer/StepF
 import bemHelper from '@navikt/sif-common-core/lib/utils/bemUtils';
 import { FormikValidationErrorSummary } from '@navikt/sif-common-formik/lib';
 import { History } from 'history';
-import { Systemtittel } from 'nav-frontend-typografi';
+import { Innholdstittel } from 'nav-frontend-typografi';
 import StepIndicator, { StepIndicatorStep } from '../step-indicator/StepIndicator';
 import './step.less';
 
@@ -85,9 +85,9 @@ function Step({
             )}
             <section aria-label={`Steg ${currentStepIndex + 1} av ${steps.length}:  ${pageTitle}`}>
                 <Box margin="xxl">
-                    <Systemtittel className={bem.element('title')} tag="h1">
+                    <Innholdstittel className={bem.element('title')} tag="h1">
                         {stepTitle}
-                    </Systemtittel>
+                    </Innholdstittel>
                 </Box>
 
                 <Box margin="xl">{children}</Box>
